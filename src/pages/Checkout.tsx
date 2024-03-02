@@ -1,9 +1,11 @@
-import React from 'react'
+import ProductCard from "../components/ProductCard"
+import PRODUCT from "../productinfo"
+
 
 const Chekout = () => {
   return (
     <div>
-      checkout
+     <ProductCard {...PRODUCT} />
     </div>
   )
 }
