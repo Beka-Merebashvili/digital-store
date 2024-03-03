@@ -4,7 +4,7 @@ import PRODUCT from "../productinfo"
 
 const Chekout = () => {
   return (
-    <div>
+    <div className='flex container mt-8'>
      <ProductCard {...PRODUCT} />
     </div>
   )
