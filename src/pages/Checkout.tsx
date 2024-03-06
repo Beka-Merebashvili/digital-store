@@ -19,7 +19,7 @@ const options = {
 };
 
 const Checkout = (props: Props) => {
-  const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PK);
+  const stripePromise = loadStripe(String(import.meta.env.VITE_STRIPE_PK));
 
   return (
     <div className='flex container mt-8'><ProductCard {...PRODUCT} />

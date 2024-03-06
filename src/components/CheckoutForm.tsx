@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import {
-  PaymentElement,
-  useStripe,
-  useElements,
-} from '@stripe/react-stripe-js';
+    PaymentElement,
+    useStripe,
+    useElements,
+  } from '@stripe/react-stripe-js';
 import PRODUCT from '../productinfo';
+
+
 
 export const CheckoutForm = () => {
   const stripe = useStripe();
@@ -29,10 +31,11 @@ export const CheckoutForm = () => {
     }
 
     // Create the PaymentIntent and obtain clientSecret from your server endpoint
-    const res = await fetch('https://2m2a8np476.us.aircode.run/payment', {
+    const res = await fetch('https://4b4f7gqeh9.us.aircode.run/payment', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        Authorization: `Bearer ${import.meta.env.VITE_STRIPE_PK}`,
+  'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         currency: 'usd',
@@ -64,6 +67,10 @@ export const CheckoutForm = () => {
       // site first to authorize the payment, then redirected to the `return_url`.
     }
   };
+
+  console.log('Stripe:', stripe);
+console.log('Elements:', elements);
+
 
   return (
     <form onSubmit={handleSubmit} className='px-4'>
