@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import {
   PaymentElement,
-  Elements,
   useStripe,
   useElements,
 } from '@stripe/react-stripe-js';

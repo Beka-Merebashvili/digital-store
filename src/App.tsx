@@ -1,8 +1,9 @@
 import Header from "./components/Header";
 import Product from "./pages/Product";
 import thummbnailImg from "./assets/development.jpg";
-import { Route, Routes, Outlet, Link } from "react-router-dom";
+import { Route, Routes, Outlet } from "react-router-dom";
 import Checkout from "./pages/Checkout";
+import Success from "./components/Sucsess";
 
 function Layout() {
   return (
@@ -31,7 +32,7 @@ function App() {
         />
       </Route>
       <Route path="checkout" element={<Checkout />} />
-        <Route path="success" element={<div>sucsess</div>} />
+        <Route path="success" element={<Success />} />
     </Routes>
   );
 }
